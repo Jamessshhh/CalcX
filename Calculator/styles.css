@@ -1,0 +1,200 @@
+/* Global Styles & Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #f0f2f5;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        transition: background 0.3s ease;
+        color: #333;
+    }
+    
+    /* Theme Toggle */
+    .theme-toggle {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+    }
+    
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 42px;
+        height: 24px;
+        margin-right: 10px;
+    }
+    
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        transition: 0.4s;
+        border-radius: 24px;
+    }
+    
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.4s;
+        border-radius: 50%;
+    }
+    
+    input:checked + .slider {
+        background-color: #4a90e2;
+    }
+    
+    input:checked + .slider:before {
+        transform: translateX(18px);
+    }
+    
+    /* Calculator Container */
+    .calculator {
+        background: #ffffff;
+        width: 350px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        overflow: hidden;
+        transition: background 0.3s ease;
+    }
+    
+    /* Display */
+    .display {
+        background: #1e1e1e;
+        padding: 20px;
+        text-align: right;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: #fff;
+    }
+    
+    .history {
+        font-size: 1rem;
+        color: #bbb;
+        min-height: 20px;
+    }
+    
+    .current {
+        font-size: 2.5rem;
+        word-wrap: break-word;
+    }
+    
+    /* Buttons Grid */
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    /* Button Styles */
+    .btn {
+        font-size: 1.5rem;
+        padding: 15px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.2s ease;
+        background: #e0e0e0;
+        color: #333;
+    }
+    
+    .btn:hover {
+        background: #d0d0d0;
+    }
+    
+    .operator {
+        background: #ff9f43;
+        color: #fff;
+    }
+    
+    .operator:hover {
+        background: #ff8a00;
+    }
+    
+    .function {
+        background: #a5a5a5;
+        color: #fff;
+    }
+    
+    .function:hover {
+        background: #909090;
+    }
+    
+    .equals {
+        background: #20bf6b;
+        color: #fff;
+    }
+    
+    .equals:hover {
+        background: #1aae5c;
+    }
+    
+    .zero {
+        grid-column: span 2;
+    }
+    
+    /* Dark Mode Overrides */
+    body.dark-mode {
+        background: #121212;
+        color: #e0e0e0;
+    }
+    
+    body.dark-mode .calculator {
+        background: #1e1e1e;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+    
+    body.dark-mode .display {
+        background: #000;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    body.dark-mode .btn {
+        background: #333;
+        color: #e0e0e0;
+    }
+    
+    body.dark-mode .btn:hover {
+        background: #444;
+    }
+    
+    body.dark-mode .operator {
+        background: #ff9f43;
+        color: #fff;
+    }
+    
+    body.dark-mode .function {
+        background: #555;
+        color: #fff;
+    }
+    
+    body.dark-mode .equals {
+        background: #20bf6b;
+        color: #fff;
+    }
+    
